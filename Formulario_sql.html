@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <html>
+    <h2>Listado De Tarea De Carlos Huanca</h2>
+    
+    <table id="tblPersonas">
+    <tbody>
+    <tr>
+    <th>Id</th>
+    <th>Tarea</th>
+    
+    <th>Accción</th>
+    </tr>
+    <tr>
+    <td> 1 </td>
+    <td>Lavar Coche</td>
+    <td><input type="button" value="Editar" /></td>
+    <td><input type="button" value="Borrar" /></td>
+    
+    </tr>
+    <tr class="alt">
+    <td>2</td>
+    <td>Renovar DNI</td>
+    <td><input type="button" value="Editar" /></td>
+    <td><input type="button" value="Borrar" /></td>
+    </tr>
+    <tr>
+    <td> 3 </td>
+    <td>Pasar La ITV</td>
+    <td><input type="button" value="Editar" /></td>
+    <td><input type="button" value="Borrar" /></td>
+    </tr>
+    <tr class="alt">
+    <td> 4 </td>
+    <td> Servicios</td>
+
+    <td><input type="button" value="Editar" /></td>
+    <td><input type="button" value="Borra" /></td>
+    </tr>
+    </tbody>
+    </table>
+    <script type="text/javascript">// < ![CDATA[
+    function Eliminar (i) {
+        document.getElementsByTagName("table")[0].setAttribute("id","tableid");
+        document.getElementById("tableid").deleteRow(i);
+    }
+    function Buscar() {
+                var tabla = document.getElementById('tblPersonas');
+                var busqueda = document.getElementById('txtBusqueda').value.toLowerCase();
+                var cellsOfRow="";
+                var found=false;
+                var compareWith="";
+                for (var i = 1; i < tabla.rows.length; i++) {
+                    cellsOfRow = tabla.rows[i].getElementsByTagName('td');
+                    found = false;
+                    for (var j = 0; j < cellsOfRow.length && !found; j++) { compareWith = cellsOfRow[j].innerHTML.toLowerCase(); if (busqueda.length == 0 || (compareWith.indexOf(busqueda) > -1))
+                        {
+                            found = true;
+                        }
+                    }
+                    if(found)
+                    {
+                        tabla.rows[i].style.display = '';
+                    } else {
+                        tabla.rows[i].style.display = 'none';
+                    }
+                }
+            }
+    // ]]></script>
+    
+    
+</body>
+</html>
